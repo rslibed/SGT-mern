@@ -13,8 +13,8 @@ class StudentForm extends Component {
       
     );
   }
-  handleAddStudent () {
-      this.props.addStudent({name: 'Ryan Libed', grade: 100, course: 'PSYCH100'});
+  handleAddStudent (values) {
+      this.props.addStudent({name: values.name, grade: values.grade, course: values.course});
   }
   render() {
     return (

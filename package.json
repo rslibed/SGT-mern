@@ -1,0 +1,21 @@
+{
+  "name": "student-grade-table",
+  "version": "1.0.0",
+  "description": "Student grade table built with React with Redux, MongoDB, Express, and NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Ryan Libed",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.14.12"
+  }
+}

@@ -11,6 +11,10 @@
   },
   "author": "Ryan Libed",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rslibed/SGT-mern.git"
+  },
   "dependencies": {
     "express": "^4.16.2",
     "mongoose": "^5.0.3"

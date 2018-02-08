@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-
+import { addStudent } from '../../actions';
+import { connect } from 'react-redux';
 
 class StudentForm extends Component {
   renderInput({ input, type, name, placeholder, defaultValue }) {
@@ -12,66 +13,44 @@ class StudentForm extends Component {
       
     );
   }
-
-  something(values) {
-    console.log('values', values);
-    console.log('hello');
+  handleAddStudent () {
+      this.props.addStudent({name: 'Ryan Libed', grade: 100, course: 'PSYCH100'});
   }
   render() {
-    console.log('props', this.props);
     return (
-      <form
-        className="student-add-form col-lg-3 col-lg-push-9"
-        onSubmit={this.props.handleSubmit(() => this.something)}
-      >
+      <form className="student-add-form col-lg-3 col-lg-push-9" onSubmit={ this.props.handleSubmit( this.handleAddStudent.bind(this) ) }>
         <h4>Add Student</h4>
         <div className="form-group input-group">
           <span className="input-group-addon">
             <span className=" glyphicon glyphicon-user" />
           </span>
-          <Field
-            component={this.renderInput}
-            name="name"
-            type="text"
-            placeholder="name"
-          />
+          <Field component={this.renderInput} name="name" type="text" placeholder="Student Name" />
         </div>
         <div className="form-group input-group">
           <span className="input-group-addon">
             <span className="glyphicon glyphicon-list-alt" />
           </span>
-          <Field component={this.renderInput} name="grade" />
+          <Field component={this.renderInput} name="grade" type="text" placeholder="Grade i.e. 95" />
         </div>
         <div className="form-group input-group">
           <span className="input-group-addon">
             <span className="glyphicon glyphicon-education" />
           </span>
-          <Field component={this.renderInput} name="course" />
+          <Field component={this.renderInput} name="course" placeholder="Course Name i.e. COMP101" />
         </div>
-        <button id="add" type="button" className="btn btn-success">
+        <button id="add" className="btn btn-success">
           Add
         </button>
-        <button id="cancel" type="button" className="btn btn-default">
+        <button id="cancel" className="btn btn-default">
           Cancel
         </button>
-        {/* <button id="getData" type="button" className="btn btn-warning">Get Data From Server</button> */}
       </form>
     );
   }
 }
 
-// StudentForm = reduxForm({
-//   form: 'name'
-// })(StudentForm);
-// StudentForm = reduxForm({
-//   form: 'grade'
-// })(StudentForm);
-// StudentForm = reduxForm({
-//   form: 'course'ßß
-// })(StudentForm);
-
 StudentForm = reduxForm({
   form: 'student-form'
 })(StudentForm);
 
-export default StudentForm;
+export default connect(null, { addStudent })(StudentForm);

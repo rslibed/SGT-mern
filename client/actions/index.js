@@ -7,3 +7,9 @@ export function addStudent (studentObj) {
         payload: studentObj
     }
 }
+export function deleteStudent (index) {
+    return {
+        type: types.DELETE_STUDENT,
+        action: index
+    }
+}

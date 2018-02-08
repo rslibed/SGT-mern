@@ -1,4 +1,5 @@
 import React from 'react';
+import StudentListItem from './student_list_item';
 
 export default () => {
   return (
@@ -12,7 +13,9 @@ export default () => {
             <th>Operations</th>
           </tr>
         </thead>
-        <tbody />
+        <tbody>
+          <StudentListItem />
+        </tbody>
       </table>
     </div>
   );

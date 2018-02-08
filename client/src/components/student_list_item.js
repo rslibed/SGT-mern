@@ -3,7 +3,14 @@ import { connect } from 'react-redux';
 
 class StudentListItem extends Component {
   render() {
-    return <div>Hello</div>;
+    return (
+      <tr>
+        <td>Ryan Libed</td>
+        <td>100</td>
+        <td>Computer Science</td>
+        <button className="btn btn-danger btn-sm">Delete</button>
+      </tr>
+    );
   }
 }
 

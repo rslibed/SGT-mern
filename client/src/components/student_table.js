@@ -13,9 +13,7 @@ export default () => {
             <th>Operations</th>
           </tr>
         </thead>
-        <tbody>
           <StudentListItem />
-        </tbody>
       </table>
     </div>
   );

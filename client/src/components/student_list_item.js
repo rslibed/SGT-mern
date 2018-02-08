@@ -8,7 +8,7 @@ class StudentListItem extends Component {
         <td>Ryan Libed</td>
         <td>100</td>
         <td>Computer Science</td>
-        <button className="btn btn-danger btn-sm">Delete</button>
+        <td><button className="btn btn-danger btn-sm">Delete</button></td>
       </tr>
     );
   }

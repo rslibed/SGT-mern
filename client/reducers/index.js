@@ -1,10 +1,7 @@
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 // export default combineReducers({});
 
-export default function(state = null, action) {
-  // console.log(action);
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
+export default combineReducers({
+  form: formReducer
+})
